@@ -37,7 +37,7 @@ public final class HMAC: Authenticator {
       }
     }
 
-    func calculateHash(_ bytes: Array<UInt8>) -> Array<UInt8> {
+    public func calculateHash(_ bytes: Array<UInt8>) -> Array<UInt8> {
       switch self {
         case .sha1:
           return Digest.sha1(bytes)
@@ -52,7 +52,7 @@ public final class HMAC: Authenticator {
       }
     }
 
-    func blockSize() -> Int {
+    public func blockSize() -> Int {
       switch self {
         case .md5:
           return MD5.blockSize
